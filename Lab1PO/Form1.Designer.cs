@@ -29,45 +29,63 @@
         private void InitializeComponent()
         {
             PizzaDeliveryTable = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
-            tabPage4 = new TabPage();
+            Clients = new TabPage();
+            dataGridViewClients = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            NameofClient = new DataGridViewTextBoxColumn();
+            FamilyName = new DataGridViewTextBoxColumn();
+            Surname = new DataGridViewTextBoxColumn();
+            Login = new DataGridViewTextBoxColumn();
+            _Password = new DataGridViewTextBoxColumn();
+            Phone = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            Orders = new TabPage();
+            dataGridViewOrders = new DataGridView();
             button2 = new Button();
-            dataGridView2 = new DataGridView();
-            groupBox1 = new GroupBox();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            button3 = new Button();
+            tabPage3 = new TabPage();
             dataGridView3 = new DataGridView();
-            dataGridView4 = new DataGridView();
+            groupBox1 = new GroupBox();
+            button3 = new Button();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
+            tabPage4 = new TabPage();
             groupBox2 = new GroupBox();
-            label2 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            label3 = new Label();
-            numericUpDown2 = new NumericUpDown();
             button4 = new Button();
+            numericUpDown2 = new NumericUpDown();
+            label3 = new Label();
+            numericUpDown1 = new NumericUpDown();
+            label2 = new Label();
+            dataGridView4 = new DataGridView();
+            IdOrders = new DataGridViewTextBoxColumn();
+            ClientId = new DataGridViewTextBoxColumn();
+            IdCourier = new DataGridViewComboBoxColumn();
+            final_price = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            address_del = new DataGridViewTextBoxColumn();
+            Weight = new DataGridViewTextBoxColumn();
+            OrderTime = new DataGridViewTextBoxColumn();
+            DeliveryTime = new DataGridViewTextBoxColumn();
             PizzaDeliveryTable.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            Clients.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
+            Orders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).BeginInit();
             tabPage3.SuspendLayout();
-            tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            groupBox1.SuspendLayout();
+            tabPage4.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             SuspendLayout();
             // 
             // PizzaDeliveryTable
             // 
-            PizzaDeliveryTable.Controls.Add(tabPage1);
-            PizzaDeliveryTable.Controls.Add(tabPage2);
+            PizzaDeliveryTable.Controls.Add(Clients);
+            PizzaDeliveryTable.Controls.Add(Orders);
             PizzaDeliveryTable.Controls.Add(tabPage3);
             PizzaDeliveryTable.Controls.Add(tabPage4);
             PizzaDeliveryTable.Location = new Point(12, 12);
@@ -76,29 +94,120 @@
             PizzaDeliveryTable.Size = new Size(776, 426);
             PizzaDeliveryTable.TabIndex = 0;
             // 
-            // tabPage1
+            // Clients
             // 
-            tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Controls.Add(button1);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(768, 398);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            Clients.Controls.Add(dataGridViewClients);
+            Clients.Controls.Add(button1);
+            Clients.Location = new Point(4, 24);
+            Clients.Name = "Clients";
+            Clients.Padding = new Padding(3);
+            Clients.Size = new Size(768, 398);
+            Clients.TabIndex = 0;
+            Clients.Text = "Clients";
+            Clients.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // dataGridViewClients
             // 
-            tabPage2.Controls.Add(dataGridView2);
-            tabPage2.Controls.Add(button2);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(768, 398);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            dataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClients.Columns.AddRange(new DataGridViewColumn[] { Id, NameofClient, FamilyName, Surname, Login, _Password, Phone, Email, Address });
+            dataGridViewClients.Location = new Point(8, 44);
+            dataGridViewClients.Name = "dataGridViewClients";
+            dataGridViewClients.Size = new Size(754, 348);
+            dataGridViewClients.TabIndex = 1;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "id";
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            // 
+            // NameofClient
+            // 
+            NameofClient.DataPropertyName = "first_name";
+            NameofClient.HeaderText = "Имя";
+            NameofClient.Name = "NameofClient";
+            // 
+            // FamilyName
+            // 
+            FamilyName.DataPropertyName = "last_name";
+            FamilyName.HeaderText = "Фамилия";
+            FamilyName.Name = "FamilyName";
+            // 
+            // Surname
+            // 
+            Surname.DataPropertyName = "surname";
+            Surname.HeaderText = "Отчество";
+            Surname.Name = "Surname";
+            // 
+            // Login
+            // 
+            Login.DataPropertyName = "login";
+            Login.HeaderText = "Логин";
+            Login.Name = "Login";
+            // 
+            // _Password
+            // 
+            _Password.DataPropertyName = "_password";
+            _Password.HeaderText = "Пароль";
+            _Password.Name = "_Password";
+            // 
+            // Phone
+            // 
+            Phone.DataPropertyName = "phone";
+            Phone.HeaderText = "Телефон";
+            Phone.Name = "Phone";
+            // 
+            // Email
+            // 
+            Email.DataPropertyName = "email";
+            Email.HeaderText = "Почта";
+            Email.Name = "Email";
+            // 
+            // Address
+            // 
+            Address.DataPropertyName = "address";
+            Address.HeaderText = "Адрес";
+            Address.Name = "Address";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(6, 6);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 30);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // Orders
+            // 
+            Orders.Controls.Add(dataGridViewOrders);
+            Orders.Controls.Add(button2);
+            Orders.Location = new Point(4, 24);
+            Orders.Name = "Orders";
+            Orders.Padding = new Padding(3);
+            Orders.Size = new Size(768, 398);
+            Orders.TabIndex = 1;
+            Orders.Text = "Orders";
+            Orders.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewOrders
+            // 
+            dataGridViewOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight, OrderTime, DeliveryTime });
+            dataGridViewOrders.Location = new Point(8, 44);
+            dataGridViewOrders.Name = "dataGridViewOrders";
+            dataGridViewOrders.Size = new Size(754, 348);
+            dataGridViewOrders.TabIndex = 1;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(6, 6);
+            button2.Name = "button2";
+            button2.Size = new Size(99, 35);
+            button2.TabIndex = 0;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -112,51 +221,13 @@
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // dataGridView3
             // 
-            tabPage4.Controls.Add(groupBox2);
-            tabPage4.Controls.Add(dataGridView4);
-            tabPage4.Location = new Point(4, 24);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(768, 398);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "tabPage4";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(6, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 30);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 44);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(754, 348);
-            dataGridView1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(6, 6);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 35);
-            button2.TabIndex = 0;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(8, 44);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(754, 348);
-            dataGridView2.TabIndex = 1;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(10, 85);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.Size = new Size(752, 307);
+            dataGridView3.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -170,23 +241,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(19, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(99, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(255, 23);
-            comboBox1.TabIndex = 1;
-            // 
             // button3
             // 
             button3.Location = new Point(406, 22);
@@ -196,21 +250,34 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // comboBox1
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(10, 85);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(752, 307);
-            dataGridView3.TabIndex = 1;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(99, 21);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(255, 23);
+            comboBox1.TabIndex = 1;
             // 
-            // dataGridView4
+            // label1
             // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(16, 80);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.Size = new Size(746, 312);
-            dataGridView4.TabIndex = 0;
+            label1.AutoSize = true;
+            label1.Location = new Point(19, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
+            // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(groupBox2);
+            tabPage4.Controls.Add(dataGridView4);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(768, 398);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "tabPage4";
+            tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -226,21 +293,21 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
             // 
-            // label2
+            // button4
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(16, 28);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
+            button4.Location = new Point(398, 29);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 4;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numericUpDown2
             // 
-            numericUpDown1.Location = new Point(76, 27);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 1;
+            numericUpDown2.Location = new Point(263, 28);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(120, 23);
+            numericUpDown2.TabIndex = 3;
             // 
             // label3
             // 
@@ -251,21 +318,90 @@
             label3.TabIndex = 2;
             label3.Text = "label3";
             // 
-            // numericUpDown2
+            // numericUpDown1
             // 
-            numericUpDown2.Location = new Point(263, 28);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 23);
-            numericUpDown2.TabIndex = 3;
+            numericUpDown1.Location = new Point(76, 27);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.TabIndex = 1;
             // 
-            // button4
+            // label2
             // 
-            button4.Location = new Point(398, 29);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(16, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 0;
+            label2.Text = "label2";
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Location = new Point(16, 80);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.Size = new Size(746, 312);
+            dataGridView4.TabIndex = 0;
+            // 
+            // IdOrders
+            // 
+            IdOrders.DataPropertyName = "id";
+            IdOrders.HeaderText = "Id";
+            IdOrders.Name = "IdOrders";
+            IdOrders.ReadOnly = true;
+            // 
+            // ClientId
+            // 
+            ClientId.DataPropertyName = "clientId";
+            ClientId.HeaderText = "Id Клиента";
+            ClientId.Name = "ClientId";
+            ClientId.ReadOnly = true;
+            // 
+            // IdCourier
+            // 
+            IdCourier.DataPropertyName = "courierId";
+            IdCourier.HeaderText = "Курьер";
+            IdCourier.Name = "IdCourier";
+            // 
+            // final_price
+            // 
+            final_price.DataPropertyName = "final_price";
+            final_price.HeaderText = "Цена";
+            final_price.Name = "final_price";
+            final_price.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "status";
+            Status.HeaderText = "Статус";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            // 
+            // address_del
+            // 
+            address_del.DataPropertyName = "address_del";
+            address_del.HeaderText = "Адрес доставки";
+            address_del.Name = "address_del";
+            // 
+            // Weight
+            // 
+            Weight.DataPropertyName = "weight";
+            Weight.HeaderText = "Вес";
+            Weight.Name = "Weight";
+            Weight.ReadOnly = true;
+            // 
+            // OrderTime
+            // 
+            OrderTime.DataPropertyName = "ordertime";
+            OrderTime.HeaderText = "Время заказа";
+            OrderTime.Name = "OrderTime";
+            OrderTime.ReadOnly = true;
+            // 
+            // DeliveryTime
+            // 
+            DeliveryTime.DataPropertyName = "deliverytime";
+            DeliveryTime.HeaderText = "Время доставки";
+            DeliveryTime.Name = "DeliveryTime";
+            DeliveryTime.ReadOnly = true;
             // 
             // Form1
             // 
@@ -277,33 +413,33 @@
             Text = "Form1";
             Load += Form1_Load;
             PizzaDeliveryTable.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
+            Clients.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClients).EndInit();
+            Orders.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).EndInit();
             tabPage3.ResumeLayout(false);
-            tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            tabPage4.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TabControl PizzaDeliveryTable;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private DataGridView dataGridView1;
+        private TabPage Clients;
+        private TabPage Orders;
+        private DataGridView dataGridViewClients;
         private Button button1;
         private TabPage tabPage3;
         private TabPage tabPage4;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridViewOrders;
         private Button button2;
         private DataGridView dataGridView3;
         private GroupBox groupBox1;
@@ -317,5 +453,23 @@
         private DataGridView dataGridView4;
         private Button button4;
         private NumericUpDown numericUpDown2;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn NameofClient;
+        private DataGridViewTextBoxColumn FamilyName;
+        private DataGridViewTextBoxColumn Surname;
+        private DataGridViewTextBoxColumn Login;
+        private DataGridViewTextBoxColumn _Password;
+        private DataGridViewTextBoxColumn Phone;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn IdOrders;
+        private DataGridViewTextBoxColumn ClientId;
+        private DataGridViewComboBoxColumn IdCourier;
+        private DataGridViewTextBoxColumn final_price;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn address_del;
+        private DataGridViewTextBoxColumn Weight;
+        private DataGridViewTextBoxColumn OrderTime;
+        private DataGridViewTextBoxColumn DeliveryTime;
     }
 }

@@ -31,3 +31,4 @@ C:\Users\Igor\source\repos\Lab1PO\Lab1PO\obj\Debug\net8.0-windows\Lab1PO.pdb
 C:\Users\Igor\source\repos\Lab1PO\Lab1PO\obj\Debug\net8.0-windows\Lab1PO.genruntimeconfig.cache
 C:\Users\Igor\source\repos\Lab1PO\Lab1PO\obj\Debug\net8.0-windows\ref\Lab1PO.dll
 C:\Users\Igor\source\repos\Lab1PO\Lab1PO\bin\Debug\net8.0-windows\Lab1PO.dll.config
+C:\Users\Igor\source\repos\Lab1PO\Lab1PO\obj\Debug\net8.0-windows\Lab1PO.sourcelink.json
