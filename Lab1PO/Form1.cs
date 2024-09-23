@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using Npgsql;
 using System.Data;
 using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 
 namespace Lab1PO
 {
@@ -41,32 +42,32 @@ namespace Lab1PO
             dataGridViewClients.DataSource = dataSet.Tables["clients"]; ;
             dataGridViewOrders.DataSource = dataSet.Tables["orders"];
 
-            // Заполнение комбобокса "Производитель" в таблице "Товары".
+            // Заполнение комбобокса "Курьеры" в таблице "Заказы".
             FillCourierCombobox();
 
-            // Заполнение комбобокса "Производитель" для отчета1.
-            //FillReport1Combobox();
+            // Заполнение комбобокса "Курьеры" для отчета1.
+            FillReport1Combobox();
         }
 
-        //private void FillReport1Combobox()
-        //{
-        //    using (var sqlConnection = new NpgsqlConnection(connectionString))
-        //    {
-        //        NpgsqlDataAdapter sqlAdapter = new NpgsqlDataAdapter("select * from manufacturer", sqlConnection);
+        private void FillReport1Combobox()
+        {
+            using (var sqlConnection = new NpgsqlConnection(connectionString))
+            {
+                NpgsqlDataAdapter sqlAdapter = new NpgsqlDataAdapter("SELECT * FROM public.ingredients\r\nORDER BY id ASC ", sqlConnection);
 
-        //        // Заполнение dataSet данными из sqlAdapter.
-        //        DataSet dataSet = new DataSet();
-        //        sqlAdapter.Fill(dataSet, "manuf");
+                // Заполнение dataSet данными из sqlAdapter.
+                DataSet dataSet = new DataSet();
+                sqlAdapter.Fill(dataSet, "ingredients");
 
-        //        // Связывание комбобокса cbSupplier с таблицей suppliers из dataSet.
-        //        comboBoxManufReport1.DataSource = dataSet.Tables["manuf"];
-        //        comboBoxManufReport1.DisplayMember = "name";
-        //        comboBoxManufReport1.ValueMember = "id";
-        //    }
-        //}
+                // Связывание комбобокса cbCouriers с таблицей couriers из dataSet.
+                comboBoxIngredients.DataSource = dataSet.Tables["ingredients"];
+                comboBoxIngredients.DisplayMember = "_name";
+                comboBoxIngredients.ValueMember = "id";
+            }
+        }
 
         /// <summary>
-        /// Заполнить комбобокс "Материал" в таблице "Детали".
+        /// Заполнить комбобокс "Курьеры" в таблице "Заказы".
         /// </summary>
         private void FillCourierCombobox()
         {
@@ -79,70 +80,73 @@ namespace Lab1PO
         }
 
         /// <summary>
-        /// Сохранить изменения в таблице material.
+        /// Сохранить изменения в таблице clients.
         /// </summary>
-        //private void buttonSavePhone_Click(object sender, EventArgs e)
-        //{
-        //    phoneAdapter.Update(dataSet, "phone");
-        //}
+        private void buttonSaveClients_Click(object sender, EventArgs e)
+        {
+            clientsAdapter.Update(dataSet, "clients");
+        }
 
-        //private void buttonGetReport1_Click(object sender, EventArgs e)
-        //{
-        //    using (NpgsqlConnection sqlConnection = new NpgsqlConnection(connectionString))
-        //    {
-        //        sqlConnection.Open();
-        //        NpgsqlCommand sqlCommand =
-        //            new NpgsqlCommand("SELECT p.Name, p.Cost" +
-        //                          " FROM manufacturer m join phone p on m.Id = p.\"manufacturerId\"" +
-        //                          " where m.Id = " + comboBoxManufReport1.SelectedValue
-        //                          , sqlConnection);
-        //        NpgsqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-        //        DataTable dataTable = new DataTable("report1");
-        //        dataTable.Columns.Add("Name");
-        //        dataTable.Columns.Add("Cost");
-        //        while (sqlDataReader.Read())
-        //        {
-        //            DataRow row = dataTable.NewRow();
-        //            row["Name"] = sqlDataReader["Name"];
-        //            row["Cost"] = sqlDataReader["Cost"];
-        //            dataTable.Rows.Add(row);
-        //        }
-        //        sqlDataReader.Close();
-        //        dataGridViewReport1.DataSource = dataTable;
-        //    }
-        //}
+        private void buttonGetReport1_Click(object sender, EventArgs e)
+        {
+            using (NpgsqlConnection sqlConnection = new NpgsqlConnection(connectionString))
+            {
+                //NpgsqlConnection sqlConnection = new NpgsqlConnection(connectionString);
+                sqlConnection.Open();
+                NpgsqlCommand sqlCommand =
+                    new NpgsqlCommand("SELECT p._name, p.description" +
+                                  " FROM pizza p inner join pizza_composition c on p.id = c.\"pizzaId\"" +
+                                  " inner join ingredients i on i.id = c.\"ingredientsId\" where i._name = \'" 
+                                  + comboBoxIngredients.Text+"\'"
+                                  , sqlConnection);
+                NpgsqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                DataTable dataTable = new DataTable("report1");
+                dataTable.Columns.Add("Name");
+                dataTable.Columns.Add("Description");
+                while (sqlDataReader.Read())
+                {
+                    DataRow row = dataTable.NewRow();
+                    row["Name"] = sqlDataReader["_name"];
+                    row["Description"] = sqlDataReader["description"];
+                    dataTable.Rows.Add(row);
+                }
+                sqlDataReader.Close();
+                dataGridViewReport1.DataSource = dataTable;
+            }
+        }
 
         /// <summary>
         /// нажатие кнопки вызова хранимой процедуры
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        //private void buttonReport2_Click(object sender, EventArgs e)
-        //{
-        //    using (NpgsqlConnection sqlConnection = new NpgsqlConnection(connectionString))
-        //    {
-        //        NpgsqlCommand sqlCommand = new NpgsqlCommand("select * from orders_getbymonth($1,$2)", sqlConnection)
-        //        {
-        //            Parameters =
-        //            {
-        //                new NpgsqlParameter(){Value = (int)numericUpDown1.Value},
-        //                new NpgsqlParameter(){Value= (int)numericUpDown2.Value},
-        //            }
-        //        };
-        //        sqlConnection.Open();
-        //        sqlCommand.Prepare();
-        //        DataTable dataTable = new DataTable("report2");
-        //        var sqlAdapter = new NpgsqlDataAdapter(sqlCommand);
-        //        sqlAdapter.Fill(dataTable);
+        private void buttonReport2_Click(object sender, EventArgs e)
+        {
+            using (NpgsqlConnection sqlConnection = new NpgsqlConnection(connectionString))
+            {
+                NpgsqlCommand sqlCommand = new NpgsqlCommand("select * from get_orders_by_month_year($1,$2)", sqlConnection)
+                {
+                    Parameters =
+                    {
+                        new NpgsqlParameter(){Value = (int)numericUpDown1.Value},
+                        new NpgsqlParameter(){Value= (int)numericUpDown2.Value},
+                    }
+                };
+                sqlConnection.Open();
+                sqlCommand.Prepare();
+                DataTable dataTable = new DataTable("report2");
+                var sqlAdapter = new NpgsqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dataTable);
 
-        //        dataGridViewReport2.DataSource = dataTable;
-        //    }
-        //}
+                dataGridViewReport2.DataSource = dataTable;
+            }
+        }
 
-        //private void buttonSaveOrders_Click(object sender, EventArgs e)
-        //{
-        //    orderAdapter.Update(dataSet, "order");
-        //}
+        private void buttonSaveOrders_Click(object sender, EventArgs e)
+        {
+            
+            ordersAdapter.Update(dataSet, "orders");
+        }
 
 
         private void Form1_Load(object sender, EventArgs e)

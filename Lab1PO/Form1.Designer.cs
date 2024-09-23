@@ -45,10 +45,10 @@
             dataGridViewOrders = new DataGridView();
             button2 = new Button();
             tabPage3 = new TabPage();
-            dataGridView3 = new DataGridView();
+            dataGridViewReport1 = new DataGridView();
             groupBox1 = new GroupBox();
             button3 = new Button();
-            comboBox1 = new ComboBox();
+            comboBoxIngredients = new ComboBox();
             label1 = new Label();
             tabPage4 = new TabPage();
             groupBox2 = new GroupBox();
@@ -57,7 +57,7 @@
             label3 = new Label();
             numericUpDown1 = new NumericUpDown();
             label2 = new Label();
-            dataGridView4 = new DataGridView();
+            dataGridViewReport2 = new DataGridView();
             IdOrders = new DataGridViewTextBoxColumn();
             ClientId = new DataGridViewTextBoxColumn();
             IdCourier = new DataGridViewComboBoxColumn();
@@ -65,21 +65,19 @@
             Status = new DataGridViewTextBoxColumn();
             address_del = new DataGridViewTextBoxColumn();
             Weight = new DataGridViewTextBoxColumn();
-            OrderTime = new DataGridViewTextBoxColumn();
-            DeliveryTime = new DataGridViewTextBoxColumn();
             PizzaDeliveryTable.SuspendLayout();
             Clients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
             Orders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).BeginInit();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReport1).BeginInit();
             groupBox1.SuspendLayout();
             tabPage4.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReport2).BeginInit();
             SuspendLayout();
             // 
             // PizzaDeliveryTable
@@ -176,8 +174,9 @@
             button1.Name = "button1";
             button1.Size = new Size(92, 30);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonSaveClients_Click;
             // 
             // Orders
             // 
@@ -194,7 +193,7 @@
             // dataGridViewOrders
             // 
             dataGridViewOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight, OrderTime, DeliveryTime });
+            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight });
             dataGridViewOrders.Location = new Point(8, 44);
             dataGridViewOrders.Name = "dataGridViewOrders";
             dataGridViewOrders.Size = new Size(754, 348);
@@ -206,33 +205,37 @@
             button2.Name = "button2";
             button2.Size = new Size(99, 35);
             button2.TabIndex = 0;
-            button2.Text = "button2";
+            button2.Text = "Сохранить";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += buttonSaveOrders_Click;
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(dataGridView3);
+            tabPage3.Controls.Add(dataGridViewReport1);
             tabPage3.Controls.Add(groupBox1);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(768, 398);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
+            tabPage3.Text = "Отчет1";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dataGridViewReport1
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(10, 85);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(752, 307);
-            dataGridView3.TabIndex = 1;
+            dataGridViewReport1.AllowUserToAddRows = false;
+            dataGridViewReport1.AllowUserToDeleteRows = false;
+            dataGridViewReport1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewReport1.Location = new Point(10, 85);
+            dataGridViewReport1.Name = "dataGridViewReport1";
+            dataGridViewReport1.ReadOnly = true;
+            dataGridViewReport1.Size = new Size(752, 307);
+            dataGridViewReport1.TabIndex = 1;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comboBoxIngredients);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(7, 12);
             groupBox1.Name = "groupBox1";
@@ -247,36 +250,37 @@
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Найти";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += buttonGetReport1_Click;
             // 
-            // comboBox1
+            // comboBoxIngredients
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(99, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(255, 23);
-            comboBox1.TabIndex = 1;
+            comboBoxIngredients.FormattingEnabled = true;
+            comboBoxIngredients.Location = new Point(99, 21);
+            comboBoxIngredients.Name = "comboBoxIngredients";
+            comboBoxIngredients.Size = new Size(255, 23);
+            comboBoxIngredients.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(19, 29);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(72, 15);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "Ингредиент";
             // 
             // tabPage4
             // 
             tabPage4.Controls.Add(groupBox2);
-            tabPage4.Controls.Add(dataGridView4);
+            tabPage4.Controls.Add(dataGridViewReport2);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
             tabPage4.Size = new Size(768, 398);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "tabPage4";
+            tabPage4.Text = "Отчет2";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -295,52 +299,62 @@
             // 
             // button4
             // 
-            button4.Location = new Point(398, 29);
+            button4.Location = new Point(445, 27);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 4;
-            button4.Text = "button4";
+            button4.Text = "Найти";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += buttonReport2_Click;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(263, 28);
+            numericUpDown2.Location = new Point(296, 26);
+            numericUpDown2.Maximum = new decimal(new int[] { 2025, 0, 0, 0 });
+            numericUpDown2.Minimum = new decimal(new int[] { 2020, 0, 0, 0 });
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(120, 23);
             numericUpDown2.TabIndex = 3;
+            numericUpDown2.Value = new decimal(new int[] { 2020, 0, 0, 0 });
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(208, 31);
+            label3.Location = new Point(255, 31);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(25, 15);
             label3.TabIndex = 2;
-            label3.Text = "label3";
+            label3.Text = "год";
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(76, 27);
+            numericUpDown1.Location = new Point(119, 26);
+            numericUpDown1.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 1;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(16, 28);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(97, 15);
             label2.TabIndex = 0;
-            label2.Text = "label2";
+            label2.Text = "Заказы за месяц";
             // 
-            // dataGridView4
+            // dataGridViewReport2
             // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(16, 80);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.Size = new Size(746, 312);
-            dataGridView4.TabIndex = 0;
+            dataGridViewReport2.AllowUserToAddRows = false;
+            dataGridViewReport2.AllowUserToDeleteRows = false;
+            dataGridViewReport2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewReport2.Location = new Point(16, 80);
+            dataGridViewReport2.Name = "dataGridViewReport2";
+            dataGridViewReport2.ReadOnly = true;
+            dataGridViewReport2.Size = new Size(746, 312);
+            dataGridViewReport2.TabIndex = 0;
             // 
             // IdOrders
             // 
@@ -354,7 +368,6 @@
             ClientId.DataPropertyName = "clientId";
             ClientId.HeaderText = "Id Клиента";
             ClientId.Name = "ClientId";
-            ClientId.ReadOnly = true;
             // 
             // IdCourier
             // 
@@ -367,14 +380,12 @@
             final_price.DataPropertyName = "final_price";
             final_price.HeaderText = "Цена";
             final_price.Name = "final_price";
-            final_price.ReadOnly = true;
             // 
             // Status
             // 
             Status.DataPropertyName = "status";
             Status.HeaderText = "Статус";
             Status.Name = "Status";
-            Status.ReadOnly = true;
             // 
             // address_del
             // 
@@ -387,21 +398,6 @@
             Weight.DataPropertyName = "weight";
             Weight.HeaderText = "Вес";
             Weight.Name = "Weight";
-            Weight.ReadOnly = true;
-            // 
-            // OrderTime
-            // 
-            OrderTime.DataPropertyName = "ordertime";
-            OrderTime.HeaderText = "Время заказа";
-            OrderTime.Name = "OrderTime";
-            OrderTime.ReadOnly = true;
-            // 
-            // DeliveryTime
-            // 
-            DeliveryTime.DataPropertyName = "deliverytime";
-            DeliveryTime.HeaderText = "Время доставки";
-            DeliveryTime.Name = "DeliveryTime";
-            DeliveryTime.ReadOnly = true;
             // 
             // Form1
             // 
@@ -418,7 +414,7 @@
             Orders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).EndInit();
             tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReport1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             tabPage4.ResumeLayout(false);
@@ -426,7 +422,7 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReport2).EndInit();
             ResumeLayout(false);
         }
 
@@ -441,16 +437,16 @@
         private TabPage tabPage4;
         private DataGridView dataGridViewOrders;
         private Button button2;
-        private DataGridView dataGridView3;
+        private DataGridView dataGridViewReport1;
         private GroupBox groupBox1;
         private Button button3;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxIngredients;
         private Label label1;
         private GroupBox groupBox2;
         private Label label3;
         private NumericUpDown numericUpDown1;
         private Label label2;
-        private DataGridView dataGridView4;
+        private DataGridView dataGridViewReport2;
         private Button button4;
         private NumericUpDown numericUpDown2;
         private DataGridViewTextBoxColumn Id;
@@ -469,7 +465,5 @@
         private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn address_del;
         private DataGridViewTextBoxColumn Weight;
-        private DataGridViewTextBoxColumn OrderTime;
-        private DataGridViewTextBoxColumn DeliveryTime;
     }
 }
