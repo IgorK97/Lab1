@@ -63,7 +63,8 @@
               "RelativeToolTip": "Lab1PO\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAACEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-09-20T15:08:44.141Z"
+              "WhenOpened": "2024-09-20T15:08:44.141Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -75,7 +76,8 @@
               "RelativeToolTip": "Lab1PO\\Lab1PO.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-20T15:06:54.226Z"
+              "WhenOpened": "2024-09-20T15:06:54.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -85,7 +87,7 @@
               "RelativeDocumentMoniker": "Lab1PO\\Form1.cs",
               "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs",
               "RelativeToolTip": "Lab1PO\\Form1.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwB0AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAawJkAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T14:47:28.707Z",
               "EditorCaption": ""

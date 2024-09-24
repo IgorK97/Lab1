@@ -24,6 +24,7 @@ namespace Lab1PO
         public Form1()
         {
             InitializeComponent();
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
 
             clientsAdapter = new NpgsqlDataAdapter("SELECT * FROM public.clients\r\nORDER BY id ASC", connectionString);
@@ -39,8 +40,13 @@ namespace Lab1PO
             ordersAdapter.Fill(dataSet, "orders");
             couriersAdapter.Fill(dataSet, "couriers");
 
-            dataGridViewClients.DataSource = dataSet.Tables["clients"]; ;
+            dataGridViewClients.DataSource = dataSet.Tables["clients"];
             dataGridViewOrders.DataSource = dataSet.Tables["orders"];
+
+            dataGridViewOrders.Columns[7].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:sszz";
+            
+
+            
 
             // Заполнение комбобокса "Курьеры" в таблице "Заказы".
             FillCourierCombobox();
@@ -96,8 +102,8 @@ namespace Lab1PO
                 NpgsqlCommand sqlCommand =
                     new NpgsqlCommand("SELECT p._name, p.description" +
                                   " FROM pizza p inner join pizza_composition c on p.id = c.\"pizzaId\"" +
-                                  " inner join ingredients i on i.id = c.\"ingredientsId\" where i._name = \'" 
-                                  + comboBoxIngredients.Text+"\'"
+                                  " inner join ingredients i on i.id = c.\"ingredientsId\" where i._name = \'"
+                                  + comboBoxIngredients.Text + "\'"
                                   , sqlConnection);
                 NpgsqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 DataTable dataTable = new DataTable("report1");
@@ -146,12 +152,23 @@ namespace Lab1PO
         {
             
             ordersAdapter.Update(dataSet, "orders");
+
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewClients_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewOrders_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
         }
     }
 }

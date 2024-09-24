@@ -65,6 +65,8 @@
             Status = new DataGridViewTextBoxColumn();
             address_del = new DataGridViewTextBoxColumn();
             Weight = new DataGridViewTextBoxColumn();
+            ordertime = new DataGridViewTextBoxColumn();
+            deliverytime = new DataGridViewTextBoxColumn();
             PizzaDeliveryTable.SuspendLayout();
             Clients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
@@ -112,6 +114,7 @@
             dataGridViewClients.Name = "dataGridViewClients";
             dataGridViewClients.Size = new Size(754, 348);
             dataGridViewClients.TabIndex = 1;
+            dataGridViewClients.CellFormatting += dataGridViewClients_CellFormatting;
             // 
             // Id
             // 
@@ -193,11 +196,12 @@
             // dataGridViewOrders
             // 
             dataGridViewOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight });
+            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight, ordertime, deliverytime });
             dataGridViewOrders.Location = new Point(8, 44);
             dataGridViewOrders.Name = "dataGridViewOrders";
             dataGridViewOrders.Size = new Size(754, 348);
             dataGridViewOrders.TabIndex = 1;
+            dataGridViewOrders.CellFormatting += dataGridViewOrders_CellFormatting;
             // 
             // button2
             // 
@@ -399,6 +403,18 @@
             Weight.HeaderText = "Вес";
             Weight.Name = "Weight";
             // 
+            // ordertime
+            // 
+            ordertime.DataPropertyName = "ordertime";
+            ordertime.HeaderText = "Время доставки";
+            ordertime.Name = "ordertime";
+            // 
+            // deliverytime
+            // 
+            deliverytime.DataPropertyName = "deliverytime";
+            deliverytime.HeaderText = "Время доставки";
+            deliverytime.Name = "deliverytime";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -465,5 +481,7 @@
         private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn address_del;
         private DataGridViewTextBoxColumn Weight;
+        private DataGridViewTextBoxColumn ordertime;
+        private DataGridViewTextBoxColumn deliverytime;
     }
 }
