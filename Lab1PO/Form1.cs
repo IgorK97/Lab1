@@ -91,6 +91,13 @@ namespace Lab1PO
         private void buttonSaveClients_Click(object sender, EventArgs e)
         {
             clientsAdapter.Update(dataSet, "clients");
+            dataSet.Tables["clients"].Rows.Clear();
+            //clientsAdapter = new NpgsqlDataAdapter("SELECT * FROM public.clients\r\nORDER BY id ASC", connectionString);
+            //clientsBuilder = new NpgsqlCommandBuilder(clientsAdapter);
+            clientsAdapter.Fill(dataSet, "clients");
+
+            //dataGridViewClients.Refresh();
+
         }
 
         private void buttonGetReport1_Click(object sender, EventArgs e)

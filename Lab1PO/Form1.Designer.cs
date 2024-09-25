@@ -43,6 +43,15 @@
             button1 = new Button();
             Orders = new TabPage();
             dataGridViewOrders = new DataGridView();
+            IdOrders = new DataGridViewTextBoxColumn();
+            ClientId = new DataGridViewTextBoxColumn();
+            IdCourier = new DataGridViewComboBoxColumn();
+            final_price = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            address_del = new DataGridViewTextBoxColumn();
+            Weight = new DataGridViewTextBoxColumn();
+            ordertime = new DataGridViewTextBoxColumn();
+            deliverytime = new DataGridViewTextBoxColumn();
             button2 = new Button();
             tabPage3 = new TabPage();
             dataGridViewReport1 = new DataGridView();
@@ -58,15 +67,6 @@
             numericUpDown1 = new NumericUpDown();
             label2 = new Label();
             dataGridViewReport2 = new DataGridView();
-            IdOrders = new DataGridViewTextBoxColumn();
-            ClientId = new DataGridViewTextBoxColumn();
-            IdCourier = new DataGridViewComboBoxColumn();
-            final_price = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            address_del = new DataGridViewTextBoxColumn();
-            Weight = new DataGridViewTextBoxColumn();
-            ordertime = new DataGridViewTextBoxColumn();
-            deliverytime = new DataGridViewTextBoxColumn();
             PizzaDeliveryTable.SuspendLayout();
             Clients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
@@ -195,13 +195,78 @@
             // 
             // dataGridViewOrders
             // 
+            dataGridViewOrders.AllowUserToDeleteRows = false;
             dataGridViewOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight, ordertime, deliverytime });
             dataGridViewOrders.Location = new Point(8, 44);
             dataGridViewOrders.Name = "dataGridViewOrders";
+            dataGridViewOrders.ReadOnly = true;
             dataGridViewOrders.Size = new Size(754, 348);
             dataGridViewOrders.TabIndex = 1;
             dataGridViewOrders.CellFormatting += dataGridViewOrders_CellFormatting;
+            // 
+            // IdOrders
+            // 
+            IdOrders.DataPropertyName = "id";
+            IdOrders.HeaderText = "Id";
+            IdOrders.Name = "IdOrders";
+            IdOrders.ReadOnly = true;
+            // 
+            // ClientId
+            // 
+            ClientId.DataPropertyName = "clientId";
+            ClientId.HeaderText = "Id Клиента";
+            ClientId.Name = "ClientId";
+            ClientId.ReadOnly = true;
+            // 
+            // IdCourier
+            // 
+            IdCourier.DataPropertyName = "courierId";
+            IdCourier.HeaderText = "Курьер";
+            IdCourier.Name = "IdCourier";
+            IdCourier.ReadOnly = true;
+            // 
+            // final_price
+            // 
+            final_price.DataPropertyName = "final_price";
+            final_price.HeaderText = "Цена";
+            final_price.Name = "final_price";
+            final_price.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "status";
+            Status.HeaderText = "Статус";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            // 
+            // address_del
+            // 
+            address_del.DataPropertyName = "address_del";
+            address_del.HeaderText = "Адрес доставки";
+            address_del.Name = "address_del";
+            address_del.ReadOnly = true;
+            // 
+            // Weight
+            // 
+            Weight.DataPropertyName = "weight";
+            Weight.HeaderText = "Вес";
+            Weight.Name = "Weight";
+            Weight.ReadOnly = true;
+            // 
+            // ordertime
+            // 
+            ordertime.DataPropertyName = "ordertime";
+            ordertime.HeaderText = "Время доставки";
+            ordertime.Name = "ordertime";
+            ordertime.ReadOnly = true;
+            // 
+            // deliverytime
+            // 
+            deliverytime.DataPropertyName = "deliverytime";
+            deliverytime.HeaderText = "Время доставки";
+            deliverytime.Name = "deliverytime";
+            deliverytime.ReadOnly = true;
             // 
             // button2
             // 
@@ -359,61 +424,6 @@
             dataGridViewReport2.ReadOnly = true;
             dataGridViewReport2.Size = new Size(746, 312);
             dataGridViewReport2.TabIndex = 0;
-            // 
-            // IdOrders
-            // 
-            IdOrders.DataPropertyName = "id";
-            IdOrders.HeaderText = "Id";
-            IdOrders.Name = "IdOrders";
-            IdOrders.ReadOnly = true;
-            // 
-            // ClientId
-            // 
-            ClientId.DataPropertyName = "clientId";
-            ClientId.HeaderText = "Id Клиента";
-            ClientId.Name = "ClientId";
-            // 
-            // IdCourier
-            // 
-            IdCourier.DataPropertyName = "courierId";
-            IdCourier.HeaderText = "Курьер";
-            IdCourier.Name = "IdCourier";
-            // 
-            // final_price
-            // 
-            final_price.DataPropertyName = "final_price";
-            final_price.HeaderText = "Цена";
-            final_price.Name = "final_price";
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "status";
-            Status.HeaderText = "Статус";
-            Status.Name = "Status";
-            // 
-            // address_del
-            // 
-            address_del.DataPropertyName = "address_del";
-            address_del.HeaderText = "Адрес доставки";
-            address_del.Name = "address_del";
-            // 
-            // Weight
-            // 
-            Weight.DataPropertyName = "weight";
-            Weight.HeaderText = "Вес";
-            Weight.Name = "Weight";
-            // 
-            // ordertime
-            // 
-            ordertime.DataPropertyName = "ordertime";
-            ordertime.HeaderText = "Время доставки";
-            ordertime.Name = "ordertime";
-            // 
-            // deliverytime
-            // 
-            deliverytime.DataPropertyName = "deliverytime";
-            deliverytime.HeaderText = "Время доставки";
-            deliverytime.Name = "deliverytime";
             // 
             // Form1
             // 
