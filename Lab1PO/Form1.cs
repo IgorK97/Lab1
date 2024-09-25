@@ -43,7 +43,7 @@ namespace Lab1PO
             dataGridViewClients.DataSource = dataSet.Tables["clients"];
             dataGridViewOrders.DataSource = dataSet.Tables["orders"];
 
-            dataGridViewOrders.Columns[7].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:sszz";
+            dataGridViewOrders.Columns[7].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             
 
             
@@ -117,6 +117,8 @@ namespace Lab1PO
                     dataTable.Rows.Add(row);
                 }
                 sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
                 dataGridViewReport1.DataSource = dataTable;
             }
         }
@@ -143,7 +145,8 @@ namespace Lab1PO
                 DataTable dataTable = new DataTable("report2");
                 var sqlAdapter = new NpgsqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dataTable);
-
+                sqlCommand.Dispose();
+                sqlConnection.Close();
                 dataGridViewReport2.DataSource = dataTable;
             }
         }
