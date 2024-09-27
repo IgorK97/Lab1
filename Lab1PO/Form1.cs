@@ -114,13 +114,13 @@ namespace Lab1PO
                                   , sqlConnection);
                 NpgsqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 DataTable dataTable = new DataTable("report1");
-                dataTable.Columns.Add("Name");
-                dataTable.Columns.Add("Description");
+                dataTable.Columns.Add("Название");
+                dataTable.Columns.Add("Описание");
                 while (sqlDataReader.Read())
                 {
                     DataRow row = dataTable.NewRow();
-                    row["Name"] = sqlDataReader["_name"];
-                    row["Description"] = sqlDataReader["description"];
+                    row["Название"] = sqlDataReader["_name"];
+                    row["Описание"] = sqlDataReader["description"];
                     dataTable.Rows.Add(row);
                 }
                 sqlDataReader.Close();

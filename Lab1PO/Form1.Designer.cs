@@ -67,6 +67,10 @@
             numericUpDown1 = new NumericUpDown();
             label2 = new Label();
             dataGridViewReport2 = new DataGridView();
+            id_ = new DataGridViewTextBoxColumn();
+            ClientId_ = new DataGridViewTextBoxColumn();
+            CourierId_ = new DataGridViewTextBoxColumn();
+            orderdate_ = new DataGridViewTextBoxColumn();
             PizzaDeliveryTable.SuspendLayout();
             Clients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
@@ -419,11 +423,40 @@
             dataGridViewReport2.AllowUserToAddRows = false;
             dataGridViewReport2.AllowUserToDeleteRows = false;
             dataGridViewReport2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewReport2.Columns.AddRange(new DataGridViewColumn[] { id_, ClientId_, CourierId_, orderdate_ });
             dataGridViewReport2.Location = new Point(16, 80);
             dataGridViewReport2.Name = "dataGridViewReport2";
             dataGridViewReport2.ReadOnly = true;
             dataGridViewReport2.Size = new Size(746, 312);
             dataGridViewReport2.TabIndex = 0;
+            // 
+            // id_
+            // 
+            id_.DataPropertyName = "id";
+            id_.HeaderText = "Id";
+            id_.Name = "id_";
+            id_.ReadOnly = true;
+            // 
+            // ClientId_
+            // 
+            ClientId_.DataPropertyName = "clientId";
+            ClientId_.HeaderText = "Клиент";
+            ClientId_.Name = "ClientId_";
+            ClientId_.ReadOnly = true;
+            // 
+            // CourierId_
+            // 
+            CourierId_.DataPropertyName = "courierId";
+            CourierId_.HeaderText = "Курьер";
+            CourierId_.Name = "CourierId_";
+            CourierId_.ReadOnly = true;
+            // 
+            // orderdate_
+            // 
+            orderdate_.DataPropertyName = "odrerdate";
+            orderdate_.HeaderText = "Дата заказа";
+            orderdate_.Name = "orderdate_";
+            orderdate_.ReadOnly = true;
             // 
             // Form1
             // 
@@ -493,5 +526,9 @@
         private DataGridViewTextBoxColumn Weight;
         private DataGridViewTextBoxColumn ordertime;
         private DataGridViewTextBoxColumn deliverytime;
+        private DataGridViewTextBoxColumn id_;
+        private DataGridViewTextBoxColumn ClientId_;
+        private DataGridViewTextBoxColumn CourierId_;
+        private DataGridViewTextBoxColumn orderdate_;
     }
 }
