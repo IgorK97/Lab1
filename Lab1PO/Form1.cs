@@ -48,11 +48,19 @@ namespace Lab1PO
 
             
 
-            // Заполнение комбобокса "Курьеры" в таблице "Заказы".
             FillCourierCombobox();
+            FillClientCombobox();
 
-            // Заполнение комбобокса "Курьеры" для отчета1.
             FillReport1Combobox();
+        }
+        private void FillClientCombobox()
+        {
+            ((DataGridViewComboBoxColumn)dataGridViewOrders.Columns["ClientId"]).DataSource =
+                dataSet.Tables["clients"];
+            ((DataGridViewComboBoxColumn)dataGridViewOrders.Columns["ClientId"]).DisplayMember =
+                "first_name";
+            ((DataGridViewComboBoxColumn)dataGridViewOrders.Columns["ClientId"]).ValueMember =
+                "id";
         }
 
         private void FillReport1Combobox()
@@ -155,6 +163,21 @@ namespace Lab1PO
                 sqlCommand.Dispose();
                 sqlConnection.Close();
                 dataGridViewReport2.DataSource = dataTable;
+
+
+                ((DataGridViewComboBoxColumn)dataGridViewReport2.Columns["ClientId_"]).DataSource =
+                dataSet.Tables["clients"];
+                ((DataGridViewComboBoxColumn)dataGridViewReport2.Columns["ClientId_"]).DisplayMember =
+                    "first_name";
+                ((DataGridViewComboBoxColumn)dataGridViewReport2.Columns["ClientId_"]).ValueMember =
+                    "id";
+
+                ((DataGridViewComboBoxColumn)dataGridViewReport2.Columns["CourierId_"]).DataSource =
+                dataSet.Tables["couriers"];
+                ((DataGridViewComboBoxColumn)dataGridViewReport2.Columns["CourierId_"]).DisplayMember =
+                    "first_name";
+                ((DataGridViewComboBoxColumn)dataGridViewReport2.Columns["CourierId_"]).ValueMember =
+                    "id";
             }
         }
 

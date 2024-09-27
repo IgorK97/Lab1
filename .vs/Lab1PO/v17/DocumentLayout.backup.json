@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|C:\\Users\\Igor\\source\\repos\\Lab1PO\\lab1po\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|solutionrelative:lab1po\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|c:\\users\\igor\\source\\repos\\lab1po\\lab1po\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|solutionrelative:lab1po\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|c:\\users\\igor\\source\\repos\\lab1po\\lab1po\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|solutionrelative:lab1po\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7D2A139-2801-40D7-8268-AC26185338C7}|Lab1PO\\Lab1PO.csproj|c:\\users\\igor\\source\\repos\\lab1po\\lab1po\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,8 +42,8 @@
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Lab1PO\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.Designer.cs*",
-              "RelativeToolTip": "Lab1PO\\Form1.Designer.cs*",
+              "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.Designer.cs",
+              "RelativeToolTip": "Lab1PO\\Form1.Designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAowBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-22T17:52:58.406Z",
@@ -63,25 +63,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs",
               "RelativeDocumentMoniker": "Lab1PO\\Form1.cs",
-              "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs*",
-              "RelativeToolTip": "Lab1PO\\Form1.cs*",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAgwHsAAAAsAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs",
+              "RelativeToolTip": "Lab1PO\\Form1.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAcwBkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T14:47:28.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "DocumentMoniker": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs",
               "RelativeDocumentMoniker": "Lab1PO\\Form1.cs",
-              "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]*",
-              "RelativeToolTip": "Lab1PO\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]*",
+              "ToolTip": "C:\\Users\\Igor\\source\\repos\\Lab1PO\\Lab1PO\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "Lab1PO\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T14:42:32.017Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"

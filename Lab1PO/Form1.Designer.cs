@@ -44,7 +44,7 @@
             Orders = new TabPage();
             dataGridViewOrders = new DataGridView();
             IdOrders = new DataGridViewTextBoxColumn();
-            ClientId = new DataGridViewTextBoxColumn();
+            ClientId = new DataGridViewComboBoxColumn();
             IdCourier = new DataGridViewComboBoxColumn();
             final_price = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
@@ -68,8 +68,8 @@
             label2 = new Label();
             dataGridViewReport2 = new DataGridView();
             id_ = new DataGridViewTextBoxColumn();
-            ClientId_ = new DataGridViewTextBoxColumn();
-            CourierId_ = new DataGridViewTextBoxColumn();
+            ClientId_ = new DataGridViewComboBoxColumn();
+            CourierId_ = new DataGridViewComboBoxColumn();
             orderdate_ = new DataGridViewTextBoxColumn();
             PizzaDeliveryTable.SuspendLayout();
             Clients.SuspendLayout();
@@ -204,7 +204,6 @@
             dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { IdOrders, ClientId, IdCourier, final_price, Status, address_del, Weight, ordertime, deliverytime });
             dataGridViewOrders.Location = new Point(8, 44);
             dataGridViewOrders.Name = "dataGridViewOrders";
-            dataGridViewOrders.ReadOnly = true;
             dataGridViewOrders.Size = new Size(754, 348);
             dataGridViewOrders.TabIndex = 1;
             dataGridViewOrders.CellFormatting += dataGridViewOrders_CellFormatting;
@@ -214,63 +213,56 @@
             IdOrders.DataPropertyName = "id";
             IdOrders.HeaderText = "Id";
             IdOrders.Name = "IdOrders";
-            IdOrders.ReadOnly = true;
             // 
             // ClientId
             // 
             ClientId.DataPropertyName = "clientId";
-            ClientId.HeaderText = "Id Клиента";
+            ClientId.HeaderText = "Клиент";
             ClientId.Name = "ClientId";
-            ClientId.ReadOnly = true;
+            ClientId.Resizable = DataGridViewTriState.True;
+            ClientId.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // IdCourier
             // 
             IdCourier.DataPropertyName = "courierId";
             IdCourier.HeaderText = "Курьер";
             IdCourier.Name = "IdCourier";
-            IdCourier.ReadOnly = true;
             // 
             // final_price
             // 
             final_price.DataPropertyName = "final_price";
             final_price.HeaderText = "Цена";
             final_price.Name = "final_price";
-            final_price.ReadOnly = true;
             // 
             // Status
             // 
             Status.DataPropertyName = "status";
             Status.HeaderText = "Статус";
             Status.Name = "Status";
-            Status.ReadOnly = true;
             // 
             // address_del
             // 
             address_del.DataPropertyName = "address_del";
             address_del.HeaderText = "Адрес доставки";
             address_del.Name = "address_del";
-            address_del.ReadOnly = true;
             // 
             // Weight
             // 
             Weight.DataPropertyName = "weight";
             Weight.HeaderText = "Вес";
             Weight.Name = "Weight";
-            Weight.ReadOnly = true;
             // 
             // ordertime
             // 
             ordertime.DataPropertyName = "ordertime";
             ordertime.HeaderText = "Время доставки";
             ordertime.Name = "ordertime";
-            ordertime.ReadOnly = true;
             // 
             // deliverytime
             // 
             deliverytime.DataPropertyName = "deliverytime";
             deliverytime.HeaderText = "Время доставки";
             deliverytime.Name = "deliverytime";
-            deliverytime.ReadOnly = true;
             // 
             // button2
             // 
@@ -443,6 +435,8 @@
             ClientId_.HeaderText = "Клиент";
             ClientId_.Name = "ClientId_";
             ClientId_.ReadOnly = true;
+            ClientId_.Resizable = DataGridViewTriState.True;
+            ClientId_.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // CourierId_
             // 
@@ -450,6 +444,8 @@
             CourierId_.HeaderText = "Курьер";
             CourierId_.Name = "CourierId_";
             CourierId_.ReadOnly = true;
+            CourierId_.Resizable = DataGridViewTriState.True;
+            CourierId_.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // orderdate_
             // 
@@ -518,7 +514,7 @@
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn IdOrders;
-        private DataGridViewTextBoxColumn ClientId;
+        private DataGridViewComboBoxColumn ClientId;
         private DataGridViewComboBoxColumn IdCourier;
         private DataGridViewTextBoxColumn final_price;
         private DataGridViewTextBoxColumn Status;
@@ -527,8 +523,8 @@
         private DataGridViewTextBoxColumn ordertime;
         private DataGridViewTextBoxColumn deliverytime;
         private DataGridViewTextBoxColumn id_;
-        private DataGridViewTextBoxColumn ClientId_;
-        private DataGridViewTextBoxColumn CourierId_;
+        private DataGridViewComboBoxColumn ClientId_;
+        private DataGridViewComboBoxColumn CourierId_;
         private DataGridViewTextBoxColumn orderdate_;
     }
 }
